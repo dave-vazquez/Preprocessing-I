@@ -84,7 +84,7 @@ html, body {
 	align-items: @align-items;
 }
 
-.section-header() {
+.section-header {
 	margin-bottom: 1rem;
 	border-bottom: 2px solid black;
 	
@@ -92,6 +92,17 @@ html, body {
 	font-size: 2.0rem;
 	font-weight: bolder;
 	text-transform: uppercase;
+}
+
+.fa-psuedo-before-styles {
+	display: inline;
+	margin-right: 10px;
+	font-style: normal;
+	font-variant: normal;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	font-family: 'Font Awesome 5 Free';
+	font-weight: 900;
 }
 
 /********************************************************
@@ -138,13 +149,13 @@ html, body {
 }
 
 .left-panel {
-	width: 75%;
+	width: 70%;
 	padding: 0 2.0rem;
 	border-right: 1px solid lightgray;
 }
 
 .right-panel {
-	width: 25%;
+	width: 30%;
 	padding: 0 2.0rem;
 }
 
@@ -153,8 +164,6 @@ html, body {
 *********************************************************/
 .objective {
 	margin-bottom: 2.0rem;
-
-	h2 { .section-header }
 
 	p {
 		font-family: @section-font;
@@ -165,10 +174,6 @@ html, body {
 
 .experience {
 	font-size: 1.6rem;
-
-	> h2 { 
-		.section-header 
-	}
 
 	header {
 
@@ -203,8 +208,64 @@ html, body {
 /********************************************************
 *              CONTACT SECTIONS (RIGHT-PANEL)           *
 *********************************************************/
+.contact {
+	.display-flex(column);
+	padding-bottom: 2rem;
+	font-size: 1.4rem;
+	line-height: 2.5rem;
 
+	a {
+		text-decoration: none;
+		color: #000;
+	}
 
+	a:before{ .fa-psuedo-before-styles }
+	
+	.email:before { content: '\f199'; /* fa unicode: email */}
+
+	.phone:before {content: '\f098'; /* fa unicode: phone */}
+
+	address:before {content: '\f3c5'; /* fa unicode: address */}
+
+	.github:before {
+		font-family: 'Font Awesome 5 Brands';
+		content: '\f0e1'; /* fa unicode: github */
+	}
+
+	.linked-in:before {
+		font-family: 'Font Awesome 5 Brands'; 
+		content: '\f08c'; /* fa unicode: linkedin */
+	}
+}
+
+.skills {
+	
+	padding-bottom: 2rem;
+	
+	ul {
+		font-size: 1.4rem;
+		font-family: @section-font; 
+
+		li {
+			line-height: 1.5rem;
+			margin-bottom: 1.0rem;
+
+			&:last-of-type {margin-bottom: 0;}
+		}
+	}
+}
+
+.education {
+	font-size: 1.4rem;
+	line-height: 2rem;
+
+	.degree {
+
+		padding-bottom: 2rem;
+		h2 {font-family: @section-font;}
+
+	}
+}
 
 
 
