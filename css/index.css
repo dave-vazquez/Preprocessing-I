@@ -137,10 +137,11 @@ body {
 }
 /* MY CODE STARTS HERE */
 /********************************************************
-*                  VARIABLES/MIXINS                     *
+*                     VARIABLES                         *
 *********************************************************/
-/* VARIABLES */
-/* MIXINS */
+/********************************************************
+*                       MIXINS                          *
+*********************************************************/
 /********************************************************
 *                      CONTAINER                        *
 *********************************************************/
@@ -193,16 +194,17 @@ body {
   padding: 0 2rem;
 }
 /********************************************************
-*                     RESUME SECTIONS                   *
+*                RESUME SECTIONS (LEFT-PANEL)           *
 *********************************************************/
 .objective {
   margin-bottom: 2rem;
 }
 .objective h2 {
   margin-bottom: 1rem;
+  border-bottom: 2px solid black;
   font-family: 'Titillium Web', sans-serif;
   font-size: 2rem;
-  font-weight: bold;
+  font-weight: bolder;
   text-transform: uppercase;
 }
 .objective p {
@@ -211,22 +213,39 @@ body {
   line-height: 2rem;
 }
 .experience {
-  line-height: 2rem;
+  font-size: 1.6rem;
 }
 .experience > h2 {
   margin-bottom: 1rem;
+  border-bottom: 2px solid black;
   font-family: 'Titillium Web', sans-serif;
   font-size: 2rem;
-  font-weight: bold;
+  font-weight: bolder;
   text-transform: uppercase;
 }
-.experience .role {
-  font-family: 'Titillium Web', sans-serif;
-  font-size: 1.6rem;
+.experience header {
+  line-height: 2rem;
 }
-.experience .company-dates {
+.experience header .role {
+  font-family: 'Titillium Web', sans-serif;
+  /* add unique font */
+}
+.experience header .company {
   font-style: italic;
 }
 .experience ul {
+  padding: 1rem 4rem 1rem 4rem;
+  font-family: 'Titillium Web', sans-serif;
   list-style: circle inside;
+  list-style-position: outside;
 }
+.experience ul li {
+  line-height: 2rem;
+  margin-bottom: 1rem;
+}
+.experience ul li:last-of-type {
+  margin-bottom: 0;
+}
+/********************************************************
+*              CONTACT SECTIONS (RIGHT-PANEL)           *
+*********************************************************/

@@ -59,11 +59,13 @@ html, body {
 }
 /* MY CODE STARTS HERE */
 
-/********************************************************
-*                  VARIABLES/MIXINS                     *
-*********************************************************/
 
-/* VARIABLES */
+
+
+
+/********************************************************
+*                     VARIABLES                         *
+*********************************************************/
 @name-font: 'Muli', sans-serif;
 @name-color: #bb9f02;
 
@@ -71,9 +73,11 @@ html, body {
 
 @section-font: 'Titillium Web', sans-serif;
 
-/* MIXINS */
-.display-flex(@direction: row, @justify: flex-start, @align-items: stretch)
-{
+/********************************************************
+*                       MIXINS                          *
+*********************************************************/
+.display-flex(@direction: row, @justify: flex-start, 
+			  @align-items: stretch) {
 	display: flex;
 	flex-direction: @direction;
 	justify-content: @justify;
@@ -81,12 +85,12 @@ html, body {
 }
 
 .section-header() {
-	
 	margin-bottom: 1rem;
+	border-bottom: 2px solid black;
 	
 	font-family: @section-font;
 	font-size: 2.0rem;
-	font-weight: bold;
+	font-weight: bolder;
 	text-transform: uppercase;
 }
 
@@ -129,9 +133,7 @@ html, body {
 *                    PANEL-CONTAINERS                    *
 *********************************************************/
 .panel-container { 
-	
 	padding: 2.0rem 0;
-
 	.display-flex 
 }
 
@@ -147,9 +149,8 @@ html, body {
 }
 
 /********************************************************
-*                     RESUME SECTIONS                   *
+*                RESUME SECTIONS (LEFT-PANEL)           *
 *********************************************************/
-
 .objective {
 	margin-bottom: 2.0rem;
 
@@ -163,24 +164,47 @@ html, body {
 }
 
 .experience {
-	
-	line-height: 2.0rem;
+	font-size: 1.6rem;
 
-	> h2 { .section-header }
-
-	.role { 
-		font-family: @section-font; 
-		font-size: 1.6rem;
+	> h2 { 
+		.section-header 
 	}
 
-	.company-dates {
-		font-style: italic;
+	header {
+
+		line-height: 2.0rem;
+
+		.role { 
+			font-family: @section-font; /* add unique font */
+		}
+
+		.company { 
+			font-style: italic; 
+		}
 	}
 
 	ul {
+		
+		padding: 1rem 4rem 1rem 4rem;
+		
+		font-family: @section-font; 
 		list-style: circle inside;
+		list-style-position: outside;
+
+		li {
+			line-height: 2.0rem;
+			margin-bottom: 1.0rem;
+
+			&:last-of-type {margin-bottom: 0;}
+		}
 	}
 }
+
+/********************************************************
+*              CONTACT SECTIONS (RIGHT-PANEL)           *
+*********************************************************/
+
+
 
 
 
