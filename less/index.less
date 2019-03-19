@@ -54,10 +54,136 @@ table {
 }
 
 html, body {
-    height: 100%;
+	height: 100%;
+	font-size: 62.5%;
+}
+/* MY CODE STARTS HERE */
+
+/********************************************************
+*                  VARIABLES/MIXINS                     *
+*********************************************************/
+
+/* VARIABLES */
+@name-font: 'Muli', sans-serif;
+@name-color: #bb9f02;
+
+@title-font: 'Raleway', sans-serif;
+
+@section-font: 'Titillium Web', sans-serif;
+
+/* MIXINS */
+.display-flex(@direction: row, @justify: flex-start, @align-items: stretch)
+{
+	display: flex;
+	flex-direction: @direction;
+	justify-content: @justify;
+	align-items: @align-items;
 }
 
-/* MY CODE STARTS HERE */
+.section-header() {
+	
+	margin-bottom: 1rem;
+	
+	font-family: @section-font;
+	font-size: 2.0rem;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+/********************************************************
+*                      CONTAINER                        *
+*********************************************************/
+.resume-container {
+	width: 100%;
+	max-width: 800px;
+	margin: 0 auto;
+
+	/* temporary */
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+}
+
+/********************************************************
+*                        HEADER                         *
+*********************************************************/
+.resume-header {	
+	height: 15rem;
+	background: url(/images/header-img.png);
+	background-size: 100%;
+
+	.display-flex(column, center, center);
+
+	.name {
+		font-family: @name-font;
+		font-size: 5.8rem;
+		color: @name-color;
+	}
+
+	.title {
+		font-family: @title-font;
+		font-size: 2.5rem;
+	}
+}
+
+/********************************************************
+*                    PANEL-CONTAINERS                    *
+*********************************************************/
+.panel-container { 
+	
+	padding: 2.0rem 0;
+
+	.display-flex 
+}
+
+.left-panel {
+	width: 75%;
+	padding: 0 2.0rem;
+	border-right: 1px solid lightgray;
+}
+
+.right-panel {
+	width: 25%;
+	padding: 0 2.0rem;
+}
+
+/********************************************************
+*                     RESUME SECTIONS                   *
+*********************************************************/
+
+.objective {
+	margin-bottom: 2.0rem;
+
+	h2 { .section-header }
+
+	p {
+		font-family: @section-font;
+		font-size: 1.6rem;
+		line-height: 2.0rem;
+	}
+}
+
+.experience {
+	
+	line-height: 2.0rem;
+
+	> h2 { .section-header }
+
+	.role { 
+		font-family: @section-font; 
+		font-size: 1.6rem;
+	}
+
+	.company-dates {
+		font-style: italic;
+	}
+
+	ul {
+		list-style: circle inside;
+	}
+}
+
+
+
 
 
 
