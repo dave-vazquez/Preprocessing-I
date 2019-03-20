@@ -113,11 +113,30 @@ body {
 	font-weight: 900;
 }
 
+.nav-styles {	
+	width: 100%;
+	margin-top: 2rem;
+	padding: 0 2rem;
+
+	font-size: 1.6rem;
+	font-family: @section-header-font;
+	
+	a {
+		text-decoration: none;
+		color: black;
+
+		&:hover {
+			text-decoration: underline;
+		}
+
+	}
+}
+
 /********************************************************
 *                      CONTAINER                        *
 *********************************************************/
 .resume-container {
-	width: 100%; /* because Cam said "it's just good to have it there" */
+	width: 100%;
 	max-width: 900px;
 	margin: 0 auto;
 }
@@ -139,6 +158,16 @@ body {
 	.title {
 		font-family: @title-font;
 		font-size: 2.5rem;
+	}
+
+	nav { 
+		.nav-styles; 
+		display: none;
+
+		@media (max-width: 800px) {
+			.display-flex;
+			justify-content: space-between;
+		}
 	}
 }
 
@@ -189,6 +218,11 @@ body {
 		font-family: @section-header-font;
 		font-size: @left-panel-font-size;
 		line-height: 2rem;
+
+		@media (max-width: 800px) {
+			padding: 0 2rem;
+			text-align:center;
+		}
 	}
 }
 
@@ -228,11 +262,14 @@ body {
 *                    (RIGHT-PANEL)                      *
 *********************************************************/
 .contact {
-	.display-flex(column);
 	padding-bottom: 2rem;
 	
 	line-height: 2.5rem;
 	font-size: @right-panel-font-size;
+
+	.contact-info-container {
+		.display-flex(column);
+	}
 	
 	a {
 		text-decoration: none;
@@ -259,6 +296,7 @@ body {
 
 	@media (max-width: 800px) {
 		order: 1;
+		padding-bottom: .5rem;
 
 		.contact-info-container {
 			.display-flex;
@@ -319,7 +357,7 @@ body {
 			}
 		}
 
-		@media (max-width: 590px) {
+		@media (max-width: 640px) {
 			.display-flex(column);
 
 			.skill-col {
@@ -373,6 +411,24 @@ body {
 			padding-bottom: 1rem;
 		}
 		// justify-content: space-between;
+	}
+}
+
+/********************************************************
+*                        FOOTER                         *
+*********************************************************/
+
+footer {
+	nav {
+		.nav-styles;
+		display: none;
+		padding-top: 2rem;
+		border-top: 2px solid black;
+
+		@media (max-width: 800px) {
+			.display-flex;
+			justify-content: space-between;
+		}
 	}
 }
 

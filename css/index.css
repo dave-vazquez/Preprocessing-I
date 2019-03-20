@@ -169,12 +169,25 @@ body {
   font-family: 'Font Awesome 5 Free';
   font-weight: 900;
 }
+.nav-styles {
+  width: 100%;
+  margin-top: 2rem;
+  padding: 0 2rem;
+  font-size: 1.6rem;
+  font-family: 'Titillium Web', sans-serif;
+}
+.nav-styles a {
+  text-decoration: none;
+  color: black;
+}
+.nav-styles a:hover {
+  text-decoration: underline;
+}
 /********************************************************
 *                      CONTAINER                        *
 *********************************************************/
 .resume-container {
   width: 100%;
-  /* because Cam said "it's just good to have it there" */
   max-width: 900px;
   margin: 0 auto;
 }
@@ -196,6 +209,30 @@ body {
 .resume-header .title {
   font-family: 'Raleway', sans-serif;
   font-size: 2.5rem;
+}
+.resume-header nav {
+  width: 100%;
+  margin-top: 2rem;
+  padding: 0 2rem;
+  font-size: 1.6rem;
+  font-family: 'Titillium Web', sans-serif;
+  display: none;
+}
+.resume-header nav a {
+  text-decoration: none;
+  color: black;
+}
+.resume-header nav a:hover {
+  text-decoration: underline;
+}
+@media (max-width: 800px) {
+  .resume-header nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: stretch;
+    justify-content: space-between;
+  }
 }
 /********************************************************
 *                    PANEL-CONTAINERS                    *
@@ -252,6 +289,12 @@ body {
   font-size: 1.6rem;
   line-height: 2rem;
 }
+@media (max-width: 800px) {
+  .objective p {
+    padding: 0 2rem;
+    text-align: center;
+  }
+}
 .experience {
   font-size: 1.6rem;
 }
@@ -287,13 +330,15 @@ body {
 *                    (RIGHT-PANEL)                      *
 *********************************************************/
 .contact {
+  padding-bottom: 2rem;
+  line-height: 2.5rem;
+  font-size: 1.4rem;
+}
+.contact .contact-info-container {
   display: flex;
   flex-direction: column;
   justify-content: start;
   align-items: stretch;
-  padding-bottom: 2rem;
-  line-height: 2.5rem;
-  font-size: 1.4rem;
 }
 .contact a {
   text-decoration: none;
@@ -334,6 +379,7 @@ body {
 @media (max-width: 800px) {
   .contact {
     order: 1;
+    padding-bottom: 0.5rem;
   }
   .contact .contact-info-container {
     display: flex;
@@ -399,7 +445,7 @@ body {
     border-right: none;
   }
 }
-@media (max-width: 590px) {
+@media (max-width: 640px) {
   .skills ul {
     display: flex;
     flex-direction: column;
@@ -457,5 +503,34 @@ body {
     width: 100%;
     border-right: none;
     padding-bottom: 1rem;
+  }
+}
+/********************************************************
+*                        FOOTER                         *
+*********************************************************/
+footer nav {
+  width: 100%;
+  margin-top: 2rem;
+  padding: 0 2rem;
+  font-size: 1.6rem;
+  font-family: 'Titillium Web', sans-serif;
+  display: none;
+  padding-top: 2rem;
+  border-top: 2px solid black;
+}
+footer nav a {
+  text-decoration: none;
+  color: black;
+}
+footer nav a:hover {
+  text-decoration: underline;
+}
+@media (max-width: 800px) {
+  footer nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: stretch;
+    justify-content: space-between;
   }
 }
