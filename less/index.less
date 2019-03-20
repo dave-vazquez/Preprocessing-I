@@ -72,14 +72,16 @@ body {
 /********************************************************
 *                     VARIABLES                         *
 *********************************************************/
-@name-font: 'Muli', sans-serif;
-@name-color: #bb9f02;
+@name-font: 'Muli', sans-serif; @name-color: #bb9f02;
 @title-font: 'Raleway', sans-serif;
 
 @section-header-font: 'Titillium Web', sans-serif;
+@text-font: 'Open Sans', sans-serif;
 
-@left-panel-font-size: 1.6rem;
-@right-panel-font-size: 1.4rem;
+@left-panel-font-size: 1.4rem;
+@right-panel-font-size: 1.2rem;
+
+@border-right: 1px solid #a3a3a3;
 
 /********************************************************
 *                       MIXINS                          *
@@ -153,11 +155,19 @@ body {
 		font-family: @name-font;
 		font-size: 5.8rem;
 		color: @name-color;
+
+		@media (max-width: 640px) {
+			font-size: 5.2rem;
+		}
 	}
 
 	.title {
 		font-family: @title-font;
 		font-size: 2.5rem;
+
+		@media (max-width: 640px) {
+			font-size: 1.9rem;
+		}
 	}
 
 	nav { 
@@ -179,6 +189,7 @@ body {
 	padding: 2rem 0;
 	background-color: rgba(255, 255, 255, 0.85);
 	
+	font-family: @text-font;
 	@media (max-width: 800px) {
 		.display-flex(column);
 	}
@@ -187,7 +198,8 @@ body {
 .left-panel {
 	width: 70%;
 	padding: 0 2rem;
-	border-right: 1px solid #a3a3a3;
+	border-right: @border-right;
+	font-size: @left-panel-font-size;
 
 	@media (max-width: 800px) {
 		width: 100%;
@@ -198,6 +210,7 @@ body {
 .right-panel {
 	
 	.display-flex(column);
+	font-size: @right-panel-font-size;
 	
 	width: 30%;
 	min-width: 240px;
@@ -215,8 +228,7 @@ body {
 	margin-bottom: 2rem;
 
 	p {
-		font-family: @section-header-font;
-		font-size: @left-panel-font-size;
+		font-family: @text-font;
 		line-height: 2rem;
 
 		@media (max-width: 800px) {
@@ -227,21 +239,18 @@ body {
 }
 
 .experience {
-	font-size: @left-panel-font-size;
 
-	header {
+	.role-header {
 		line-height: 2rem;
-
-		.role { font-family: @section-header-font; /* add unique font */}
+		
+		.role { font-weight: bold; }
 
 		.company { font-style: italic; }
 	}
 
 	ul {
+		padding: 1rem 4rem;
 		
-		padding: 1rem 4rem 1rem 4rem;
-		
-		font-family: @section-header-font; 
 		list-style: circle inside;
 		list-style-position: outside;
 
@@ -263,9 +272,7 @@ body {
 *********************************************************/
 .contact {
 	padding-bottom: 2rem;
-	
 	line-height: 2.5rem;
-	font-size: @right-panel-font-size;
 
 	.contact-info-container {
 		.display-flex(column);
@@ -277,51 +284,43 @@ body {
 	}
 
 	a:before{ .fa-psuedo-before-styles }
+
+	.github:before, .linked-in:before {font-family: 'Font Awesome 5 Brands';}
+	address {font-family: 'Font Awesome Solid'}
 	
-	.email:before { content: '\f199'; /* fa unicode: email */}
-
-	.phone:before { content: '\f098'; /* fa unicode: phone */}
-
-	address:before { content: '\f3c5'; /* fa unicode: address */}
-
-	.github:before {
-		font-family: 'Font Awesome 5 Brands';
-		content: '\f0e1'; /* fa unicode: github */
-	}
-
-	.linked-in:before {
-		font-family: 'Font Awesome 5 Brands'; 
-		content: '\f08c'; /* fa unicode: linkedin */
-	}
+	.email:before     { content: '\f199'; /* fa unicode: email */}
+	.phone:before     { content: '\f098'; /* fa unicode: phone */}
+	.github:before    { content: '\f0e1'; /* fab unicode: github */}
+	.linked-in:before { content: '\f08c'; /* fab unicode: linkedin */}
+	address:before    { content: '\f3c5'; /* fas unicode: linkedin */}
+	
 
 	@media (max-width: 800px) {
 		order: 1;
 		padding-bottom: .5rem;
 
 		.contact-info-container {
-			.display-flex;
-			justify-content: space-evenly;
+			.display-flex(row, space-evenly);
+			padding-left: 2rem;
 		}
 
 		address {
 			margin-top: 1rem;
 			text-align: center;
 
-			&:before {
-				content: '';
-			}
+			&:before { content: ''; }
 		}
 	}
 
-	@media (max-width: 590px) {
-		.contact-info-container {
-			.display-flex(column);
-			padding-left: 2rem;
+	@media (max-width: 640px) {
+		.contact-info-container { 
+			.display-flex(column); 
+			padding-left: 4rem;
 		}
 
-		address {
-			text-align: left;
-			padding-left: 2rem;
+		address { 
+			text-align: left; 
+			padding-left: 4rem;
 		}
 	}
 }
@@ -331,7 +330,7 @@ body {
 	
 	ul {
 		font-size: @right-panel-font-size;
-		font-family: @section-header-font; 
+		font-family: @text-font; 
 
 		li {
 			line-height: 1.5rem;
@@ -346,10 +345,10 @@ body {
 			padding: 1rem 2rem;
 			
 			.skill-col {
-				.display-flex(column, start, start);
+				.display-flex(column);
 				width: 33.33%;
 				padding-left: 2rem;
-				border-right: 1px solid #a3a3a3;
+				border-right: @border-right;
 
 				&:last-of-type {
 					border-right: none;
@@ -362,35 +361,46 @@ body {
 
 			.skill-col {
 				width: 100%;
+				margin-bottom: 1rem;
 				border-right: none;
+
+				&:last-of-type {
+					margin-bottom: 0;
+				}
 			}
 		}
 	}
 }
 
 .education {
-	font-size: @right-panel-font-size;
 	line-height: 2rem;
 
 	.degree {
 		padding-bottom: 2rem;
 		
-		h2 {font-family: @section-header-font;}
+		h2 {
+			font-family: @text-font;
+			font-weight: bold;
+		}
+
+		p {font-style: italic;}
 	}
 
 	@media (max-width: 800px) {
 		.degree-container {
 			.display-flex;
-			padding: 2rem 2rem;
 			justify-content: space-between;
+			padding: 2rem 2rem;
 		}
 
 		.degree {
-			.display-flex(column, start, start);
+			.display-flex(column);
+			
+			width: 33.33%;
+
 			padding-left: 2rem;
 			padding-bottom: 0;
-			width: 33.33%;
-			border-right: 1px solid #a3a3a3;
+			border-right: @border-right;
 
 			&:last-of-type {
 				border-right: none;
@@ -400,7 +410,7 @@ body {
 
 	@media (max-width: 640px) {
 		.degree-container {
-			.display-flex(column, start, start);
+			.display-flex(column);
 			width: 100%;
 			padding: 1rem 2rem;
 		}
@@ -410,7 +420,6 @@ body {
 			border-right: none;
 			padding-bottom: 1rem;
 		}
-		// justify-content: space-between;
 	}
 }
 
@@ -426,14 +435,7 @@ footer {
 		border-top: 2px solid black;
 
 		@media (max-width: 800px) {
-			.display-flex;
-			justify-content: space-between;
+			.display-flex(row, space-between);
 		}
 	}
 }
-
-
-
-
-
-

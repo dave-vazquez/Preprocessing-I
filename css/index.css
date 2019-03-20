@@ -206,9 +206,19 @@ body {
   font-size: 5.8rem;
   color: #bb9f02;
 }
+@media (max-width: 640px) {
+  .resume-header .name {
+    font-size: 5.2rem;
+  }
+}
 .resume-header .title {
   font-family: 'Raleway', sans-serif;
   font-size: 2.5rem;
+}
+@media (max-width: 640px) {
+  .resume-header .title {
+    font-size: 1.9rem;
+  }
 }
 .resume-header nav {
   width: 100%;
@@ -244,6 +254,7 @@ body {
   align-items: stretch;
   padding: 2rem 0;
   background-color: rgba(255, 255, 255, 0.85);
+  font-family: 'Open Sans', sans-serif;
 }
 @media (max-width: 800px) {
   .panel-container {
@@ -257,6 +268,7 @@ body {
   width: 70%;
   padding: 0 2rem;
   border-right: 1px solid #a3a3a3;
+  font-size: 1.4rem;
 }
 @media (max-width: 800px) {
   .left-panel {
@@ -269,6 +281,7 @@ body {
   flex-direction: column;
   justify-content: start;
   align-items: stretch;
+  font-size: 1.2rem;
   width: 30%;
   min-width: 240px;
   padding: 0 2rem;
@@ -285,8 +298,7 @@ body {
   margin-bottom: 2rem;
 }
 .objective p {
-  font-family: 'Titillium Web', sans-serif;
-  font-size: 1.6rem;
+  font-family: 'Open Sans', sans-serif;
   line-height: 2rem;
 }
 @media (max-width: 800px) {
@@ -295,22 +307,17 @@ body {
     text-align: center;
   }
 }
-.experience {
-  font-size: 1.6rem;
-}
-.experience header {
+.experience .role-header {
   line-height: 2rem;
 }
-.experience header .role {
-  font-family: 'Titillium Web', sans-serif;
-  /* add unique font */
+.experience .role-header .role {
+  font-weight: bold;
 }
-.experience header .company {
+.experience .role-header .company {
   font-style: italic;
 }
 .experience ul {
-  padding: 1rem 4rem 1rem 4rem;
-  font-family: 'Titillium Web', sans-serif;
+  padding: 1rem 4rem;
   list-style: circle inside;
   list-style-position: outside;
 }
@@ -332,7 +339,6 @@ body {
 .contact {
   padding-bottom: 2rem;
   line-height: 2.5rem;
-  font-size: 1.4rem;
 }
 .contact .contact-info-container {
   display: flex;
@@ -354,6 +360,13 @@ body {
   font-family: 'Font Awesome 5 Free';
   font-weight: 900;
 }
+.contact .github:before,
+.contact .linked-in:before {
+  font-family: 'Font Awesome 5 Brands';
+}
+.contact address {
+  font-family: 'Font Awesome Solid';
+}
 .contact .email:before {
   content: '\f199';
   /* fa unicode: email */
@@ -362,19 +375,17 @@ body {
   content: '\f098';
   /* fa unicode: phone */
 }
-.contact address:before {
-  content: '\f3c5';
-  /* fa unicode: address */
-}
 .contact .github:before {
-  font-family: 'Font Awesome 5 Brands';
   content: '\f0e1';
-  /* fa unicode: github */
+  /* fab unicode: github */
 }
 .contact .linked-in:before {
-  font-family: 'Font Awesome 5 Brands';
   content: '\f08c';
-  /* fa unicode: linkedin */
+  /* fab unicode: linkedin */
+}
+.contact address:before {
+  content: '\f3c5';
+  /* fas unicode: linkedin */
 }
 @media (max-width: 800px) {
   .contact {
@@ -384,9 +395,9 @@ body {
   .contact .contact-info-container {
     display: flex;
     flex-direction: row;
-    justify-content: start;
-    align-items: stretch;
     justify-content: space-evenly;
+    align-items: stretch;
+    padding-left: 2rem;
   }
   .contact address {
     margin-top: 1rem;
@@ -396,25 +407,25 @@ body {
     content: '';
   }
 }
-@media (max-width: 590px) {
+@media (max-width: 640px) {
   .contact .contact-info-container {
     display: flex;
     flex-direction: column;
     justify-content: start;
     align-items: stretch;
-    padding-left: 2rem;
+    padding-left: 4rem;
   }
   .contact address {
     text-align: left;
-    padding-left: 2rem;
+    padding-left: 4rem;
   }
 }
 .skills {
   padding-bottom: 2rem;
 }
 .skills ul {
-  font-size: 1.4rem;
-  font-family: 'Titillium Web', sans-serif;
+  font-size: 1.2rem;
+  font-family: 'Open Sans', sans-serif;
 }
 .skills ul li {
   line-height: 1.5rem;
@@ -436,7 +447,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: start;
-    align-items: start;
+    align-items: stretch;
     width: 33.33%;
     padding-left: 2rem;
     border-right: 1px solid #a3a3a3;
@@ -454,18 +465,25 @@ body {
   }
   .skills ul .skill-col {
     width: 100%;
+    margin-bottom: 1rem;
     border-right: none;
+  }
+  .skills ul .skill-col:last-of-type {
+    margin-bottom: 0;
   }
 }
 .education {
-  font-size: 1.4rem;
   line-height: 2rem;
 }
 .education .degree {
   padding-bottom: 2rem;
 }
 .education .degree h2 {
-  font-family: 'Titillium Web', sans-serif;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+}
+.education .degree p {
+  font-style: italic;
 }
 @media (max-width: 800px) {
   .education .degree-container {
@@ -473,17 +491,17 @@ body {
     flex-direction: row;
     justify-content: start;
     align-items: stretch;
-    padding: 2rem 2rem;
     justify-content: space-between;
+    padding: 2rem 2rem;
   }
   .education .degree {
     display: flex;
     flex-direction: column;
     justify-content: start;
-    align-items: start;
+    align-items: stretch;
+    width: 33.33%;
     padding-left: 2rem;
     padding-bottom: 0;
-    width: 33.33%;
     border-right: 1px solid #a3a3a3;
   }
   .education .degree:last-of-type {
@@ -495,7 +513,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: start;
-    align-items: start;
+    align-items: stretch;
     width: 100%;
     padding: 1rem 2rem;
   }
@@ -529,8 +547,7 @@ footer nav a:hover {
   footer nav {
     display: flex;
     flex-direction: row;
-    justify-content: start;
-    align-items: stretch;
     justify-content: space-between;
+    align-items: stretch;
   }
 }
