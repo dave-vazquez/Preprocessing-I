@@ -142,7 +142,7 @@ body {
 *                        BODY                           *
 *********************************************************/
 body {
-  background: url(/images/header-img.jpg);
+  background: url(../images/header-img.jpg);
   background-position-x: 50.5%;
 }
 @media (max-width: 800px) {
