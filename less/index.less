@@ -57,26 +57,34 @@ html, body {
 	height: 100%;
 	font-size: 62.5%;
 }
+
 /* MY CODE STARTS HERE */
 
+body {
+	background: url(/images/header-img.jpg); 
+	background-position-x: 50.5%;
 
-
-
+	@media (max-width: 800px) {
+		background-position-x: 50.2%;
+	}
+}
 
 /********************************************************
 *                     VARIABLES                         *
 *********************************************************/
 @name-font: 'Muli', sans-serif;
 @name-color: #bb9f02;
-
 @title-font: 'Raleway', sans-serif;
 
-@section-font: 'Titillium Web', sans-serif;
+@section-header-font: 'Titillium Web', sans-serif;
+
+@left-panel-font-size: 1.6rem;
+@right-panel-font-size: 1.4rem;
 
 /********************************************************
 *                       MIXINS                          *
 *********************************************************/
-.display-flex(@direction: row, @justify: flex-start, 
+.display-flex(@direction: row, @justify: start, 
 			  @align-items: stretch) {
 	display: flex;
 	flex-direction: @direction;
@@ -88,8 +96,8 @@ html, body {
 	margin-bottom: 1rem;
 	border-bottom: 2px solid black;
 	
-	font-family: @section-font;
-	font-size: 2.0rem;
+	font-family: @section-header-font;
+	font-size: 2rem;
 	font-weight: bolder;
 	text-transform: uppercase;
 }
@@ -109,13 +117,9 @@ html, body {
 *                      CONTAINER                        *
 *********************************************************/
 .resume-container {
-	width: 100%;
-	max-width: 800px;
+	width: 100%; /* because Cam said "it's just good to have it there" */
+	max-width: 900px;
 	margin: 0 auto;
-
-	/* temporary */
-	border-left: 1px solid black;
-	border-right: 1px solid black;
 }
 
 /********************************************************
@@ -123,8 +127,6 @@ html, body {
 *********************************************************/
 .resume-header {	
 	height: 15rem;
-	background: url(/images/header-img.png);
-	background-size: 100%;
 
 	.display-flex(column, center, center);
 
@@ -144,76 +146,87 @@ html, body {
 *                    PANEL-CONTAINERS                    *
 *********************************************************/
 .panel-container { 
-	padding: 2.0rem 0;
-	.display-flex 
+	.display-flex;
+	padding: 2rem 0;
+	background-color: rgba(255, 255, 255, 0.85);
+	
+	@media (max-width: 800px) {
+		.display-flex(column);
+	}
 }
 
 .left-panel {
 	width: 70%;
-	padding: 0 2.0rem;
-	border-right: 1px solid lightgray;
+	padding: 0 2rem;
+	border-right: 1px solid #a3a3a3;
+
+	@media (max-width: 800px) {
+		width: 100%;
+		border-right: none;
+	}
 }
 
 .right-panel {
 	width: 30%;
-	padding: 0 2.0rem;
+	min-width: 240px;
+	padding: 0 2rem;
+
+	@media (max-width: 800px) {
+		width: 100%;
+	}
 }
 
 /********************************************************
-*                RESUME SECTIONS (LEFT-PANEL)           *
+*                     (LEFT-PANEL)                      *
 *********************************************************/
 .objective {
-	margin-bottom: 2.0rem;
+	margin-bottom: 2rem;
 
 	p {
-		font-family: @section-font;
-		font-size: 1.6rem;
-		line-height: 2.0rem;
+		font-family: @section-header-font;
+		font-size: @left-panel-font-size;
+		line-height: 2rem;
 	}
 }
 
 .experience {
-	font-size: 1.6rem;
+	font-size: @left-panel-font-size;
 
 	header {
+		line-height: 2rem;
 
-		line-height: 2.0rem;
+		.role { font-family: @section-header-font; /* add unique font */}
 
-		.role { 
-			font-family: @section-font; /* add unique font */
-		}
-
-		.company { 
-			font-style: italic; 
-		}
+		.company { font-style: italic; }
 	}
 
 	ul {
 		
 		padding: 1rem 4rem 1rem 4rem;
 		
-		font-family: @section-font; 
+		font-family: @section-header-font; 
 		list-style: circle inside;
 		list-style-position: outside;
 
 		li {
-			line-height: 2.0rem;
-			margin-bottom: 1.0rem;
+			line-height: 2rem;
+			margin-bottom: 1rem;
 
-			&:last-of-type {margin-bottom: 0;}
+			&:last-of-type { margin-bottom: 0; }
 		}
 	}
 }
 
 /********************************************************
-*              CONTACT SECTIONS (RIGHT-PANEL)           *
+*                    (RIGHT-PANEL)                      *
 *********************************************************/
 .contact {
 	.display-flex(column);
 	padding-bottom: 2rem;
-	font-size: 1.4rem;
+	
 	line-height: 2.5rem;
-
+	font-size: @right-panel-font-size;
+	
 	a {
 		text-decoration: none;
 		color: #000;
@@ -223,9 +236,9 @@ html, body {
 	
 	.email:before { content: '\f199'; /* fa unicode: email */}
 
-	.phone:before {content: '\f098'; /* fa unicode: phone */}
+	.phone:before { content: '\f098'; /* fa unicode: phone */}
 
-	address:before {content: '\f3c5'; /* fa unicode: address */}
+	address:before { content: '\f3c5'; /* fa unicode: address */}
 
 	.github:before {
 		font-family: 'Font Awesome 5 Brands';
@@ -236,34 +249,43 @@ html, body {
 		font-family: 'Font Awesome 5 Brands'; 
 		content: '\f08c'; /* fa unicode: linkedin */
 	}
+
+	@media (max-width: 800px) {
+		order: 2;
+	}
 }
 
 .skills {
-	
 	padding-bottom: 2rem;
 	
 	ul {
-		font-size: 1.4rem;
-		font-family: @section-font; 
+		font-size: @right-panel-font-size;
+		font-family: @section-header-font; 
 
 		li {
 			line-height: 1.5rem;
-			margin-bottom: 1.0rem;
+			margin-bottom: 1rem;
 
 			&:last-of-type {margin-bottom: 0;}
 		}
 	}
+	@media (max-width: 800px) {
+		order: 3;
+	}
 }
 
 .education {
-	font-size: 1.4rem;
+	font-size: @right-panel-font-size;
 	line-height: 2rem;
 
 	.degree {
-
 		padding-bottom: 2rem;
-		h2 {font-family: @section-font;}
+		
+		h2 {font-family: @section-header-font;}
+	}
 
+	@media (max-width: 800px) {
+		order: 1;
 	}
 }
 

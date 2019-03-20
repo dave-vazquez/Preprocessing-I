@@ -136,6 +136,15 @@ body {
   font-size: 62.5%;
 }
 /* MY CODE STARTS HERE */
+body {
+  background: url(/images/header-img.jpg);
+  background-position-x: 50.5%;
+}
+@media (max-width: 800px) {
+  body {
+    background-position-x: 50.2%;
+  }
+}
 /********************************************************
 *                     VARIABLES                         *
 *********************************************************/
@@ -165,19 +174,15 @@ body {
 *********************************************************/
 .resume-container {
   width: 100%;
-  max-width: 800px;
+  /* because Cam said "it's just good to have it there" */
+  max-width: 900px;
   margin: 0 auto;
-  /* temporary */
-  border-left: 1px solid black;
-  border-right: 1px solid black;
 }
 /********************************************************
 *                        HEADER                         *
 *********************************************************/
 .resume-header {
   height: 15rem;
-  background: url(/images/header-img.png);
-  background-size: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -196,23 +201,44 @@ body {
 *                    PANEL-CONTAINERS                    *
 *********************************************************/
 .panel-container {
-  padding: 2rem 0;
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: start;
   align-items: stretch;
+  padding: 2rem 0;
+  background-color: rgba(255, 255, 255, 0.85);
+}
+@media (max-width: 800px) {
+  .panel-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: stretch;
+  }
 }
 .left-panel {
   width: 70%;
   padding: 0 2rem;
-  border-right: 1px solid lightgray;
+  border-right: 1px solid #a3a3a3;
+}
+@media (max-width: 800px) {
+  .left-panel {
+    width: 100%;
+    border-right: none;
+  }
 }
 .right-panel {
   width: 30%;
+  min-width: 240px;
   padding: 0 2rem;
 }
+@media (max-width: 800px) {
+  .right-panel {
+    width: 100%;
+  }
+}
 /********************************************************
-*                RESUME SECTIONS (LEFT-PANEL)           *
+*                     (LEFT-PANEL)                      *
 *********************************************************/
 .objective {
   margin-bottom: 2rem;
@@ -249,16 +275,16 @@ body {
   margin-bottom: 0;
 }
 /********************************************************
-*              CONTACT SECTIONS (RIGHT-PANEL)           *
+*                    (RIGHT-PANEL)                      *
 *********************************************************/
 .contact {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: start;
   align-items: stretch;
   padding-bottom: 2rem;
-  font-size: 1.4rem;
   line-height: 2.5rem;
+  font-size: 1.4rem;
 }
 .contact a {
   text-decoration: none;
@@ -296,6 +322,11 @@ body {
   content: '\f08c';
   /* fa unicode: linkedin */
 }
+@media (max-width: 800px) {
+  .contact {
+    order: 2;
+  }
+}
 .skills {
   padding-bottom: 2rem;
 }
@@ -310,6 +341,11 @@ body {
 .skills ul li:last-of-type {
   margin-bottom: 0;
 }
+@media (max-width: 800px) {
+  .skills {
+    order: 3;
+  }
+}
 .education {
   font-size: 1.4rem;
   line-height: 2rem;
@@ -319,4 +355,9 @@ body {
 }
 .education .degree h2 {
   font-family: 'Titillium Web', sans-serif;
+}
+@media (max-width: 800px) {
+  .education {
+    order: 1;
+  }
 }
