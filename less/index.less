@@ -58,17 +58,6 @@ html, body {
 	font-size: 62.5%;
 }
 
-/* MY CODE STARTS HERE */
-
-body {
-	background: url(/images/header-img.jpg); 
-	background-position-x: 50.5%;
-
-	@media (max-width: 800px) {
-		background-position-x: 50.2%;
-	}
-}
-
 /********************************************************
 *                     VARIABLES                         *
 *********************************************************/
@@ -82,6 +71,21 @@ body {
 @right-panel-font-size: 1.2rem;
 
 @border-right: 1px solid #a3a3a3;
+
+@tablet: 800px;
+@mobile: 640px;
+
+/********************************************************
+*                        BODY                           *
+*********************************************************/
+body {
+	background: url(/images/header-img.jpg); 
+	background-position-x: 50.5%;
+
+	@media (max-width: @tablet) {
+		background-position-x: 50.2%;
+	}
+}
 
 /********************************************************
 *                       MIXINS                          *
@@ -156,7 +160,7 @@ body {
 		font-size: 5.8rem;
 		color: @name-color;
 
-		@media (max-width: 640px) {
+		@media (max-width: @mobile) {
 			font-size: 5.2rem;
 		}
 	}
@@ -165,7 +169,7 @@ body {
 		font-family: @title-font;
 		font-size: 2.5rem;
 
-		@media (max-width: 640px) {
+		@media (max-width: @mobile) {
 			font-size: 1.9rem;
 		}
 	}
@@ -174,7 +178,7 @@ body {
 		.nav-styles; 
 		display: none;
 
-		@media (max-width: 800px) {
+		@media (max-width: @tablet) {
 			.display-flex;
 			justify-content: space-between;
 		}
@@ -190,7 +194,7 @@ body {
 	background-color: rgba(255, 255, 255, 0.85);
 	
 	font-family: @text-font;
-	@media (max-width: 800px) {
+	@media (max-width: @tablet) {
 		.display-flex(column);
 	}
 }
@@ -201,7 +205,7 @@ body {
 	border-right: @border-right;
 	font-size: @left-panel-font-size;
 
-	@media (max-width: 800px) {
+	@media (max-width: @tablet) {
 		width: 100%;
 		border-right: none;
 	}
@@ -216,7 +220,7 @@ body {
 	min-width: 240px;
 	padding: 0 2rem;
 
-	@media (max-width: 800px) {
+	@media (max-width: @tablet) {
 		width: 100%;
 	}
 }
@@ -231,7 +235,7 @@ body {
 		font-family: @text-font;
 		line-height: 2rem;
 
-		@media (max-width: 800px) {
+		@media (max-width: @tablet) {
 			padding: 0 2rem;
 			text-align:center;
 		}
@@ -262,7 +266,7 @@ body {
 		}
 	}
 
-	@media (max-width: 800px) {
+	@media (max-width: @tablet) {
 		margin-bottom: 1rem;
 	}
 }
@@ -283,10 +287,10 @@ body {
 		color: #000;
 	}
 
-	a:before{ .fa-psuedo-before-styles }
+	a:before, address:before{ .fa-psuedo-before-styles }
 
 	.github:before, .linked-in:before {font-family: 'Font Awesome 5 Brands';}
-	address {font-family: 'Font Awesome Solid'}
+	// address {font-family: 'Font Awesome Solid'}
 	
 	.email:before     { content: '\f199'; /* fa unicode: email */}
 	.phone:before     { content: '\f098'; /* fa unicode: phone */}
@@ -295,7 +299,7 @@ body {
 	address:before    { content: '\f3c5'; /* fas unicode: linkedin */}
 	
 
-	@media (max-width: 800px) {
+	@media (max-width: @tablet) {
 		order: 1;
 		padding-bottom: .5rem;
 
@@ -312,7 +316,7 @@ body {
 		}
 	}
 
-	@media (max-width: 640px) {
+	@media (max-width: @tablet) {
 		.contact-info-container { 
 			.display-flex(column); 
 			padding-left: 4rem;
@@ -339,7 +343,7 @@ body {
 			&:last-of-type {margin-bottom: 0;}
 		}
 
-		@media (max-width: 800px) {
+		@media (max-width: @tablet) {
 			.display-flex;
 			justify-content: space-between;
 			padding: 1rem 2rem;
@@ -356,7 +360,7 @@ body {
 			}
 		}
 
-		@media (max-width: 640px) {
+		@media (max-width: @mobile) {
 			.display-flex(column);
 
 			.skill-col {
@@ -386,7 +390,7 @@ body {
 		p {font-style: italic;}
 	}
 
-	@media (max-width: 800px) {
+	@media (max-width: @tablet) {
 		.degree-container {
 			.display-flex;
 			justify-content: space-between;
@@ -408,7 +412,7 @@ body {
 		}
 	}
 
-	@media (max-width: 640px) {
+	@media (max-width: @mobile) {
 		.degree-container {
 			.display-flex(column);
 			width: 100%;
@@ -434,7 +438,7 @@ footer {
 		padding-top: 2rem;
 		border-top: 2px solid black;
 
-		@media (max-width: 800px) {
+		@media (max-width: @tablet) {
 			.display-flex(row, space-between);
 		}
 	}

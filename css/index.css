@@ -135,7 +135,12 @@ body {
   height: 100%;
   font-size: 62.5%;
 }
-/* MY CODE STARTS HERE */
+/********************************************************
+*                     VARIABLES                         *
+*********************************************************/
+/********************************************************
+*                        BODY                           *
+*********************************************************/
 body {
   background: url(/images/header-img.jpg);
   background-position-x: 50.5%;
@@ -145,9 +150,6 @@ body {
     background-position-x: 50.2%;
   }
 }
-/********************************************************
-*                     VARIABLES                         *
-*********************************************************/
 /********************************************************
 *                       MIXINS                          *
 *********************************************************/
@@ -350,7 +352,8 @@ body {
   text-decoration: none;
   color: #000;
 }
-.contact a:before {
+.contact a:before,
+.contact address:before {
   display: inline;
   margin-right: 10px;
   font-style: normal;
@@ -363,9 +366,6 @@ body {
 .contact .github:before,
 .contact .linked-in:before {
   font-family: 'Font Awesome 5 Brands';
-}
-.contact address {
-  font-family: 'Font Awesome Solid';
 }
 .contact .email:before {
   content: '\f199';
@@ -407,7 +407,7 @@ body {
     content: '';
   }
 }
-@media (max-width: 640px) {
+@media (max-width: 800px) {
   .contact .contact-info-container {
     display: flex;
     flex-direction: column;
