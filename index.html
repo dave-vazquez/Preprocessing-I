@@ -22,13 +22,20 @@
 			<header class="resume-header">
 				<h1 class="name">Johnathan Doe</h1>
 				<h2 class="title">FULL STACK WEB DEVELOPER</h2>
+				<nav>
+					<a href="">Objective</a>
+					<a href="">Experience</a>
+					<a href="">Skills</a>
+					<a href="">Education</a>
+					<a href="">Contact</a>
+				</nav>
 			</header>
 			
 			<div class="panel-container">
 
 				<div class="left-panel">
 					
-					<section class="objective">
+					<section id="objective" class="objective">
 						<h2 class="section-header">Objective</h2>
 						<p>
 							Web Developer with 5+ years of experience in designing and developing user interfaces,
@@ -37,7 +44,7 @@
 						</p>
 					</section>
 
-					<section class="experience">
+					<section id="experience" class="experience">
 						<h2 class="section-header">Experience</h2>
 						
 						<section>
@@ -87,48 +94,58 @@
 
 				<div class="right-panel">
 					
-					<section class="contact">
+					<section id="contact" class="contact">
 						<h2 class="section-header">Contact</h2>
-						<a class="email" href="mailto:email@email.com">email@email.com</a>
-						<a class="phone" href="tel:895-555-5555">895 555 5555</a>
-						<a class="github" href="github.com">github.com/github-user</a>
-						<a class="linked-in" href="linkedin.com">linkedin.com/profile</a>
-						<address>4397 Aaron Smith Drive</br>
-									Harrisburg, PA 17101</address>
+						<div class="contact-info-container">
+							<a class="email" href="mailto:email@email.com">email@email.com</a>
+							<a class="phone" href="tel:895-555-5555">895 555 5555</a>
+							<a class="github" href="github.com">github.com/github-user</a>
+							<a class="linked-in" href="linkedin.com">linkedin.com/profile</a>
+						</div>
+						<address>20 W 34th St</br>
+									New York, NY 10001</address>
 					</section>
 
-					<section class="skills">
+					<section id="skills" class="skills">
 						<h2 class="section-header">Skills</h2>
 						<ul>
-							<li>PHP / PERL / Access</li>
-							<li>Oracle / .NET / CSS</li>
-							<li>ASP / SQL / Javascript</li>
-							<li>Visual Basic</li>
-							<li>XML / C# / Ajax /HTML</li>
-							<li>Wordpress</li>
-							<li>Dreamweaver</li>
-							<li>Photoshop</li>
+							<div class="skill-col">
+								<li>PHP / PERL / Access</li>
+								<li>Oracle / .NET / CSS</li>
+								<li>ASP / SQL / Javascript</li>
+							</div>
+							<div class="skill-col">
+								<li>Visual Basic</li>
+								<li>XML / C# / Ajax /HTML</li>
+							</div>
+							<div class="skill-col">
+								<li>Wordpress</li>
+								<li>Dreamweaver</li>
+								<li>Photoshop</li>
+							</div>
 						</ul>
 					</section>
 
-					<section class="education">
+					<section id="education" class="education">
 						<h2 class="section-header">Education</h2>
-						<section class="degree">
-							<h2 class="degree-type">B.S. Web Development</h2>
-							<p>California State University</br>
-								Fullterton, CA / 2013</p>
-						</section>
-						
-						<section class="degree">
-							<h2 class="degree-type">A.A. Programming</h2>
-							<p>Fullerton College</br>
-								Fullterton, CA / 2013</p>
-						</section>
+						<div class="degree-container">
+							<section class="degree">
+								<h2 class="degree-type">B.S. Web Development</h2>
+								<p>California State University</br>
+									Fullterton, CA / 2013</p>
+							</section>
+							
+							<section class="degree">
+								<h2 class="degree-type">A.A. Programming</h2>
+								<p>Fullerton College</br>
+									Fullterton, CA / 2013</p>
+							</section>
 
-						<section class="degree">
-							<h2 class="degree-type">Certified Java Programmer</h2>
-							<p>2010</p>
-						</section>
+							<section class="degree">
+								<h2 class="degree-type">Certified Java Programmer</h2>
+								<p>2010</p>
+							</section>
+						</div>
 					</section>
 
 				</div><!-- end div.right-panel-->
